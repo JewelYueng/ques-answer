@@ -10,12 +10,13 @@
             <el-radio label='4'>Other</el-radio>
         </el-radio-group>
         <div>
-            <el-button @click='next()'>{{hintText}}<i class="el-icon-arrow-right el-icon--right" v-show="currentId!==5"></i></el-button>
+            <el-button @click='next()'>{{currentId === 4 ? '提交答案' : '下一题'}}<i class="el-icon-arrow-right el-icon--right" v-show="currentId!==5"></i></el-button>
         </div>
     </div>
 </template>
 
 <script>
+/* eslint-disable */
 import axios from 'axios'
 const APP_VERSION = '1-0-0' 
 export default {
@@ -25,43 +26,52 @@ export default {
             answer: 0
         }
     },
-    props: ['imageId', 'currentId'],
-    computed: {
-        imageSrc: ()=>{
-           return require(`./../assets/1.jpg`) 
-        },
-        hintText: () => {
-            // return this.currentId === 5 ? '提交答案' : '下一题'
-            return '下一题'
-        }
-    },
+    props: ['imageSrc', 'currentId'],
     methods: {
-        next(){
-            let img = new Image()
-            img.src= `./../assets/${this.imageId}.jpg`
-            axios({
-                method: 'POST',
-                url: 'http://www.momodel.cn:8899/pyapi/apps/run/5c7f9cbf1afd9436953b06e5',
-                data: {
-                    app: {
-                        input: '',
-                        version: APP_VERSION
-                    }
-                },
-                headers: {
-                    'content-type': 'application/json'
-                }
-            }).then((res)=>{
-                console.log(res)
-                if(this.currentId === 5) {
-                    this.$emit('submit', this.imageId, this.answer)
-                } else {
-                    this.$emit('finished', this.imageId, this.answer)
-                }
-            })
+        getBase64Image(img) {
+            let canvas = document.createElement("canvas")
+            canvas.width = img.width
+            canvas.height = img.height
+            var ctx = canvas.getContext("2d")
+            ctx.drawImage(img, 0, 0, img.width, img.height)
+            var dataURL = canvas.toDataURL("image/jpg")
+            canvas = null
+            // return dataURL 
+            return dataURL.replace("data:image/png;base64,", "")
         },
-        image2Base64(img) {
-
+        next(){
+            const _this = this
+            let img = new Image()
+            img.src = this.imageSrc
+            img.onload = () => { 
+                let imgCode = _this.getBase64Image(img)
+                if(_this.currentId === 4) {
+                    _this.$emit('submit', _this.answer)
+                } else {
+                    _this.$emit('finished', _this.answer)
+                }
+                // axios({
+                //     method: 'POST',
+                //     url: 'http://www.momodel.cn:8899/pyapi/apps/run/5c7f9cbf1afd9436953b06e5',
+                //     data: {
+                //         app: {
+                //             input: imgCode,
+                //             version: APP_VERSION
+                //         }
+                //     },
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     }
+                // }).then((res)=>{
+                //     console.log(res)
+                //     if(_this.currentId === 5) {
+                //         _this.$emit('submit', _this.imageId, _this.answer)
+                //     } else {
+                //         _this.$emit('finished', _this.imageId, _this.answer)
+                //     }
+                // })
+            }
+            
         }
     }
 }

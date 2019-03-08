@@ -7,6 +7,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import Question from './Question.vue'
 
 const APP_VERSION = '1-0-0' 
@@ -25,9 +26,11 @@ export default {
     methods: {
         restart() {
             console.log('再来一组')
+            this.$router.push('/questions')
         },
         goBack() {
             console.log('返回首页')
+            this.$router.push('/')
         }
     }
 }

@@ -43,6 +43,7 @@ export default {
             const _this = this
             let img = new Image()
             img.src = this.imageSrc
+            img.crossOrigin = "Anonymous"
             img.onload = () => { 
                 let imgCode = _this.getBase64Image(img)
                 if(_this.currentId === 4) {
@@ -50,26 +51,26 @@ export default {
                 } else {
                     _this.$emit('finished', _this.answer)
                 }
-                // axios({
-                //     method: 'POST',
-                //     url: 'http://www.momodel.cn:8899/pyapi/apps/run/5c7f9cbf1afd9436953b06e5',
-                //     data: {
-                //         app: {
-                //             input: imgCode,
-                //             version: APP_VERSION
-                //         }
-                //     },
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     }
-                // }).then((res)=>{
-                //     console.log(res)
-                //     if(_this.currentId === 5) {
-                //         _this.$emit('submit', _this.imageId, _this.answer)
-                //     } else {
-                //         _this.$emit('finished', _this.imageId, _this.answer)
-                //     }
-                // })
+                axios({
+                    method: 'POST',
+                    url: 'http://www.momodel.cn:8899/pyapi/apps/run/5c7f9cbf1afd9436953b06e5',
+                    data: {
+                        app: {
+                            input: imgCode,
+                            version: APP_VERSION
+                        }
+                    },
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                }).then((res)=>{
+                    console.log(res)
+                    if(_this.currentId === 5) {
+                        _this.$emit('submit', _this.imageId, _this.answer)
+                    } else {
+                        _this.$emit('finished', _this.imageId, _this.answer)
+                    }
+                })
             }
             
         }

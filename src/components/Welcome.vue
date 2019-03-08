@@ -5,19 +5,11 @@
 </template>
 
 <script>
-import Question from './Question.vue'
-
-const APP_VERSION = '1-0-0' 
 
 export default {
-    name: 'QuestionGroup',
-    components: {
-        Question
-    },
+    name: 'Welcome',
     data: ()=>{
         return {
-            currentId: 0,
-            score: 0
         }
     },
     methods: {

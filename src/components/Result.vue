@@ -1,7 +1,8 @@
 <template>
     <div class="result">
-        <p>{{score}}</p>
-        <el-button @click="restart">再来一组</el-button>
+        <p>您的得分</p>
+        <p class="score">{{$route.params.score}}</p>
+        <el-button @click="restart" type="primary">再来一组</el-button>
         <el-button @click="goBack">返回首页</el-button>
     </div>
 </template>
@@ -19,8 +20,7 @@ export default {
     },
     data: ()=>{
         return {
-            currentId: 0,
-            score: 0
+            currentId: 0
         }
     },
     methods: {
@@ -35,4 +35,10 @@ export default {
     }
 }
 </script>
+
+<style>
+    .score{
+        font-size: 30px;
+    }
+</style>
 

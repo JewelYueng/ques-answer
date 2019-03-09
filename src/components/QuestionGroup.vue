@@ -82,7 +82,7 @@ export default {
     },
     computed: {
         imageSrc(){
-            return require(`${IMAGES[this.quesArr[this.currentId]].name}.jpg`)
+            return require(`./../assets/${IMAGES[this.quesArr[this.currentId]].name}.jpg`)
         }
     },
     created(){

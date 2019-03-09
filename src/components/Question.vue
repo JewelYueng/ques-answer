@@ -1,7 +1,7 @@
 <template>
     <div  class='question-panel'>
         <div class='image-container'>
-            <img  :src='`@assets/${imageSrc}`' />
+            <img  :src='imageSrc' />
         </div>
         <el-radio-group v-model='answer' class="group">
             <el-radio label='1' border>Bact</el-radio>

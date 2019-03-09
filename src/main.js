@@ -6,6 +6,7 @@ import router from './router'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.prototype.$baseUrl = process.env.BASE_URL
 
 new Vue({
   router,

@@ -1,0 +1,114 @@
+Bact_1
+1. BACT:52%
+2. FUNGAL:46%
+3. VIRUS:0%
+4. OTHERS:0%
+
+Bact_2
+1. BACT:85%
+2. FUNGAL:13%
+3. VIRUS:0%
+4. OTHERS:0%
+
+Bact_3
+1. BACT:94%
+2. FUNGAL:5%
+3. VIRUS:0%
+4. OTHERS:0%
+
+Fungal_1
+1. BACT:0%
+2. FUNGAL:99%
+3. VIRUS:0%
+4. OTHERS:0%
+
+Fungal_2
+1. BACT:0%
+2. FUNGAL:99%
+3. VIRUS:0%
+4. OTHERS:0%
+
+Fungal_3
+1. BACT:40%
+2. FUNGAL:58%
+3. VIRUS:0%
+4. OTHERS:1%
+
+Fungal_4
+1. BACT:3%
+2. FUNGAL:95%
+3. VIRUS:0%
+4. OTHERS:0%
+
+Fungal_5
+1. BACT:2%
+2. FUNGAL:97%
+3. VIRUS:0%
+4. OTHERS:0%
+
+Virus_1
+1. BACT:0%
+2. FUNGAL:0%
+3. VIRUS:98%
+4. OTHERS:1%
+
+Virus_2
+1. BACT:0%
+2. FUNGAL:1%
+3. VIRUS:94%
+4. OTHERS:3%
+
+Virus_3
+1. BACT:0%
+2. FUNGAL:0%
+3. VIRUS:99%
+4. OTHERS:0%
+
+Virus_4
+1. BACT:0%
+2. FUNGAL:0%
+3. VIRUS:99%
+4. OTHERS:0%
+
+Virus_5
+1. BACT:0%
+2. FUNGAL:1%
+3. VIRUS:65%
+4. OTHERS:32%
+
+Virus_6
+1. BACT:0%
+2. FUNGAL:0%
+3. VIRUS:87%
+4. OTHERS:12%
+
+Virus_7
+1. BACT:0%
+2. FUNGAL:0%
+3. VIRUS:82%
+4. OTHERS:17%
+
+Virus_8
+1. BACT:0%
+2. FUNGAL:3%
+3. VIRUS:48%
+4. OTHERS:47%
+
+Other_1
+1. BACT:6%
+2. FUNGAL:0%
+3. VIRUS:36%
+4. OTHERS:56%
+
+Other_2
+1. BACT:0%
+2. FUNGAL:0%
+3. VIRUS:0%
+4. OTHERS:99%
+
+Others_3
+1. BACT:0%
+2. FUNGAL:0%
+3. VIRUS:47%
+4. OTHERS:52%
+
